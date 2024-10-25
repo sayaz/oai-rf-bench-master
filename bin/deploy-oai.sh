@@ -1,5 +1,5 @@
 set -ex
-COMMIT_HASH=$1
+COMMIT_HASH="develop"
 NODE_ROLE=$2
 BINDIR=`dirname $0`
 ETCDIR=/local/repository/etc
@@ -90,7 +90,7 @@ function setup_cn_node {
 
     echo cloning and syncing oai-cn5g-fed...
     cd $SRCDIR
-    git clone --branch develop $COMMIT_HASH $OAI_CN5G_REPO oai-cn5g-fed
+    git clone --branch $COMMIT_HASH $OAI_CN5G_REPO oai-cn5g-fed
     cd oai-cn5g-fed
     git checkout -f $COMMIT_HASH
     ./scripts/syncComponents.sh
@@ -123,7 +123,7 @@ function setup_ran_node {
 
     echo cloning and building oai ran...
     cd $SRCDIR
-    git clone --branch develop $OAI_RAN_MIRROR oairan
+    git clone --branch $COMMIT_HASH $OAI_RAN_MIRROR oairan
     cd oairan
     git checkout $COMMIT_HASH
 
