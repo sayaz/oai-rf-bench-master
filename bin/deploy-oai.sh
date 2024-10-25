@@ -1,5 +1,5 @@
 set -ex
-COMMIT_HASH=$1
+COMMIT_HASH=develop
 NODE_ROLE=$2
 BINDIR=`dirname $0`
 ETCDIR=/local/repository/etc
